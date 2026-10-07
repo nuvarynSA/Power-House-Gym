@@ -1,0 +1,142 @@
+.welcome-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.welcome-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.welcome-modal-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.welcome-modal-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #000;
+}
+
+.welcome-subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.welcome-content {
+  margin-bottom: 30px;
+}
+
+.welcome-step {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #09a451;
+}
+
+.welcome-step h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.welcome-step p {
+  margin: 0 0 15px 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.welcome-step ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #333;
+}
+
+.welcome-step li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.welcome-method {
+  margin-top: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.welcome-method h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #09a451;
+}
+
+.welcome-method p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.welcome-modal-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.welcome-close-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .welcome-modal {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .welcome-modal-header h2 {
+    font-size: 22px;
+  }
+
+  .welcome-step {
+    padding: 15px;
+  }
+
+  .welcome-step h3 {
+    font-size: 18px;
+  }
+
+  .welcome-close-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+

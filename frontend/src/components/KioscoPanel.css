@@ -1,0 +1,449 @@
+.kiosco-panel {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kiosco-panel.kiosco-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Contenedor de la cámara centrado */
+.kiosco-camera-container {
+  position: relative;
+  width: 900px;
+  height: 900px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border: 3px solid rgba(9, 164, 81, 0.5);
+  box-shadow: 0 0 30px rgba(9, 164, 81, 0.3);
+  z-index: 10;
+}
+
+.kiosco-scanner-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.kiosco-scanner-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.kiosco-scanner-hint-error {
+  border: 1px solid rgba(255, 80, 80, 0.8);
+  background: rgba(35, 0, 0, 0.78);
+  color: #ffd1d1;
+  max-width: 80%;
+}
+
+/* Popup grande de resultado */
+.kiosco-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.kiosco-popup.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.kiosco-popup-content {
+  width: 90%;
+  max-width: 800px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 4px solid;
+  animation: popupPulse 2s ease-in-out;
+}
+
+.kiosco-popup-content.success {
+  border-color: #09a451;
+  box-shadow: 0 20px 60px rgba(9, 164, 81, 0.4);
+}
+
+.kiosco-popup-content.error {
+  border-color: #ff4444;
+  box-shadow: 0 20px 60px rgba(255, 68, 68, 0.4);
+}
+
+@keyframes popupPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.kiosco-popup-icon {
+  font-size: 90px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: iconBounce 0.5s ease-out;
+}
+
+.kiosco-popup-icon.success {
+  color: #09a451;
+}
+
+.kiosco-popup-icon.error {
+  color: #ff4444;
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.kiosco-popup-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 32px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.kiosco-popup-title.success {
+  color: #09a451;
+}
+
+.kiosco-popup-title.error {
+  color: #ff4444;
+}
+
+.kiosco-popup-photo {
+  margin: 20px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #09a451;
+  box-shadow: 0 10px 30px rgba(9, 164, 81, 0.5);
+  animation: photoAppear 0.5s ease-out 0.2s both;
+}
+
+.kiosco-popup-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kiosco-popup-info {
+  margin-top: 30px;
+}
+
+.kiosco-popup-guest-name,
+.kiosco-popup-subscriber-name {
+  font-size: 32px;
+  color: #ffffff;
+  margin: 20px 0;
+  font-weight: 600;
+  animation: textSlideIn 0.5s ease-out 0.4s both;
+}
+
+.kiosco-popup-guest-name strong,
+.kiosco-popup-subscriber-name strong {
+  color: #09a451;
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.kiosco-popup-motive {
+  font-size: 28px;
+  color: #ff4444;
+  margin: 20px 0;
+  font-weight: 600;
+  animation: textSlideIn 0.5s ease-out 0.4s both;
+}
+
+@keyframes textSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animaciones de brazos */
+.kiosco-arm {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  z-index: 1500;
+  pointer-events: none;
+}
+
+.kiosco-arm img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(9, 164, 81, 0.8));
+}
+
+.kiosco-arm-left {
+  bottom: -300px;
+  left: -150px;
+  transform-origin: bottom left;
+  animation: armRiseLeft 1.2s ease-out forwards, armFallLeft 1.2s ease-in 0.8s forwards;
+}
+
+.kiosco-arm-right {
+  bottom: -300px;
+  right: -150px;
+  transform-origin: bottom right;
+  animation: armRiseRight 1.2s ease-out forwards, armFallRight 1.2s ease-in 0.8s forwards;
+}
+
+@keyframes armRiseLeft {
+  0% {
+    transform: translate(0, 0) rotate(-90deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(80px, -250px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes armRiseRight {
+  0% {
+    transform: translate(0, 0) rotate(90deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-80px, -250px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes armFallLeft {
+  0% {
+    transform: translate(80px, -250px) rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes armFallRight {
+  0% {
+    transform: translate(-80px, -250px) rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kiosco-camera-container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .kiosco-arm {
+    width: 250px;
+    height: 250px;
+  }
+
+  .kiosco-arm-left {
+    bottom: -200px;
+    left: -100px;
+    animation: armRiseLeftMobile 1.2s ease-out forwards, armFallLeftMobile 1.2s ease-in 0.8s forwards;
+  }
+
+  .kiosco-arm-right {
+    bottom: -200px;
+    right: -100px;
+    animation: armRiseRightMobile 1.2s ease-out forwards, armFallRightMobile 1.2s ease-in 0.8s forwards;
+  }
+
+  @keyframes armRiseLeftMobile {
+    0% {
+      transform: translate(0, 0) rotate(-90deg);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(60px, -180px) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes armRiseRightMobile {
+    0% {
+      transform: translate(0, 0) rotate(90deg);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-60px, -180px) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes armFallLeftMobile {
+    0% {
+      transform: translate(60px, -180px) rotate(0deg);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, 0) rotate(-90deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes armFallRightMobile {
+    0% {
+      transform: translate(-60px, -180px) rotate(0deg);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, 0) rotate(90deg);
+      opacity: 0;
+    }
+  }
+
+  .kiosco-popup-content {
+    width: 95%;
+    padding: 40px 20px;
+  }
+
+  .kiosco-popup-icon {
+    font-size: 80px;
+  }
+
+  .kiosco-popup-title {
+    font-size: 32px;
+  }
+
+  .kiosco-popup-guest-name,
+  .kiosco-popup-subscriber-name {
+    font-size: 24px;
+  }
+
+  .kiosco-popup-guest-name strong,
+  .kiosco-popup-subscriber-name strong {
+    font-size: 18px;
+  }
+
+  .kiosco-popup-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .kiosco-arm {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Estilos para html5-qrcode */
+#kiosco-scanner-container {
+  position: relative;
+}
+
+#kiosco-scanner-container video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+#kiosco-scanner-container canvas {
+  display: none;
+}

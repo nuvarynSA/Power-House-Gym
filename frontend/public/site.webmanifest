@@ -1,0 +1,36 @@
+{
+  "name": "PowerHouse Gym - Sistema de Invitados",
+  "short_name": "PHG Invitados",
+  "description": "Sistema de gestión de invitados para PowerHouse Gym",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "powerhouse-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "powerhouse-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "powerhouse-logo.png",
+      "sizes": "2240x1784",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+

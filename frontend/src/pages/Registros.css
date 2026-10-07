@@ -1,0 +1,326 @@
+.registros h1 {
+  color: var(--color-black);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.active-daycare-section {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border: 2px solid var(--color-black);
+}
+
+.active-daycare-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.active-daycare-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.active-daycare-count {
+  min-width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-green);
+}
+
+.active-daycare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.active-daycare-card {
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fafafa;
+}
+
+.active-daycare-card-overhour {
+  border-color: #e67e22;
+  background: #fff5ea;
+}
+
+.active-daycare-card-overhourhalf {
+  border-color: #d63031;
+  background: #ffecec;
+}
+
+.active-daycare-card-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.active-daycare-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d9d9d9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #333;
+}
+
+.active-daycare-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active-daycare-avatar-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  display: block;
+}
+
+.active-daycare-card h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.active-daycare-card p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #4d4d4d;
+}
+
+.active-daycare-counter {
+  font-weight: 700;
+}
+
+.active-daycare-counter-warning {
+  color: #b35a00;
+}
+
+.active-daycare-counter-critical {
+  color: #b00020;
+}
+
+.active-daycare-parents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.active-daycare-parent-pill {
+  background: #e9f6ee;
+  color: #10673a;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.active-daycare-phone {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #2f2f2f;
+}
+
+.active-daycare-phone-link {
+  color: var(--color-green);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.active-daycare-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.active-daycare-actions .btn {
+  flex: 1;
+}
+
+.active-daycare-empty {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-gray-dark);
+}
+
+.filters-section {
+  background-color: var(--color-white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border: 2px solid var(--color-black);
+}
+
+.filters-section h2 {
+  color: var(--color-black);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters-section .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-black);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.filters-section .form-group input,
+.filters-section .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-gray-dark);
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.filters-section .form-group input:focus,
+.filters-section .form-group select:focus {
+  outline: none;
+  border-color: var(--color-green);
+}
+
+.record-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-photo-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.record-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--color-black);
+}
+
+.image-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.image-modal-content {
+  position: relative;
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: min(90vw, 720px);
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-black);
+}
+
+.image-modal-photo {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+  background: var(--color-white);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .registros h1 {
+    font-size: 24px;
+  }
+
+  .active-daycare-section {
+    padding: 16px;
+  }
+
+  .active-daycare-header h2 {
+    font-size: 18px;
+  }
+
+  .active-daycare-actions {
+    flex-direction: column;
+  }
+
+  .filters-section {
+    padding: 20px;
+  }
+
+  .filters-section h2 {
+    font-size: 18px;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .table-container {
+    /* Estilos heredados de index.css */
+  }
+}
+
+@media (max-width: 480px) {
+  .registros h1 {
+    font-size: 20px;
+  }
+
+  .filters-section {
+    padding: 15px;
+  }
+
+}

@@ -1,0 +1,131 @@
+.logs {
+  padding: 20px;
+}
+
+.logs h1 {
+  color: var(--color-black);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.filters-section {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-section h2 {
+  font-size: 20px;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters-grid .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filters-grid label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.filters-grid input,
+.filters-grid select {
+  padding: 10px;
+  border: 2px solid var(--color-gray-dark);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.filters-grid input:focus,
+.filters-grid select:focus {
+  outline: none;
+  border-color: var(--color-green);
+}
+
+.badge-log-login {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.badge-log-logout {
+  background-color: #f44336;
+  color: white;
+}
+
+.badge-log-crear_invitado,
+.badge-log-crear_suscriptor,
+.badge-log-crear_usuario {
+  background-color: #2196F3;
+  color: white;
+}
+
+.badge-log-editar_invitado,
+.badge-log-editar_suscriptor,
+.badge-log-editar_usuario {
+  background-color: #FF9800;
+  color: white;
+}
+
+.badge-log-eliminar_invitado,
+.badge-log-eliminar_suscriptor {
+  background-color: #f44336;
+  color: white;
+}
+
+.badge-log-validar_ingreso {
+  background-color: #9C27B0;
+  color: white;
+}
+
+.badge-log-enviar_email {
+  background-color: #00BCD4;
+  color: white;
+}
+
+.badge-log-importar_csv {
+  background-color: #795548;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: var(--color-gray-dark);
+}
+
+.table-container {
+  /* Estilos heredados de index.css */
+}
+
+@media (max-width: 768px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

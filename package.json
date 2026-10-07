@@ -1,0 +1,17 @@
+{
+  "name": "sistema-powerhouse-gym-invitados",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de invitados para gimnasio (demo con datos simulados)",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "npm install"
+  },
+  "devDependencies": {}
+}

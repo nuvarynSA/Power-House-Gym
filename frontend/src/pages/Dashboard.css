@@ -1,0 +1,524 @@
+.dashboard {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  color: var(--color-black) !important;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.dashboard-subtitle {
+  color: var(--color-black) !important;
+  font-size: 14px;
+}
+
+.current-date {
+  text-transform: capitalize;
+  color: var(--color-black) !important;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-gray);
+  font-size: 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--color-white) 0%, #f8f9fa 100%);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-black);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-black);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card-primary::before {
+  background: linear-gradient(90deg, #2196F3, #1976D2);
+}
+
+.stat-card-success::before {
+  background: linear-gradient(90deg, #4CAF50, #388E3C);
+}
+
+.stat-card-highlight::before {
+  background: linear-gradient(90deg, #FF9800, #F57C00);
+}
+
+.stat-card-info::before {
+  background: linear-gradient(90deg, #00BCD4, #0097A7);
+}
+
+.stat-icon {
+  font-size: 48px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-card h3 {
+  color: var(--color-black);
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: bold;
+  color: var(--color-black);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-number.stat-large {
+  font-size: 56px;
+}
+
+.stat-detail {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat-detail-item {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.stat-detail-item.success {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.stat-detail-item.warning {
+  background: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.chart-card {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-black);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.chart-title {
+  color: var(--color-black);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Estilos para Recharts - Asegurar contraste */
+.chart-card .recharts-text {
+  fill: var(--color-black) !important;
+  font-weight: 500;
+}
+
+.chart-card .recharts-cartesian-axis-tick-value {
+  fill: var(--color-black) !important;
+}
+
+.chart-card .recharts-legend-item-text {
+  fill: var(--color-black) !important;
+  color: var(--color-black) !important;
+}
+
+.chart-card .recharts-tooltip-wrapper {
+  border-radius: 8px;
+}
+
+.chart-card .recharts-default-tooltip {
+  background-color: var(--color-white) !important;
+  border: 2px solid var(--color-black) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px 12px !important;
+}
+
+.chart-card .recharts-tooltip-label {
+  color: var(--color-black) !important;
+  font-weight: 600;
+}
+
+.chart-card .recharts-tooltip-item {
+  color: var(--color-black) !important;
+}
+
+.chart-card .recharts-tooltip-item-name,
+.chart-card .recharts-tooltip-item-value,
+.chart-card .recharts-tooltip-item-separator {
+  color: var(--color-black) !important;
+}
+
+.chart-card .recharts-cartesian-grid-horizontal line,
+.chart-card .recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 0, 0, 0.1) !important;
+}
+
+.chart-card .recharts-pie-label-text {
+  fill: var(--color-black) !important;
+  font-weight: 600;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dashboard {
+    color: var(--color-white);
+  }
+
+  .dashboard-header h1 {
+    color: var(--color-black) !important;
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border-color: var(--color-white);
+  }
+
+  .stat-card h3 {
+    color: var(--color-white);
+    opacity: 0.9;
+  }
+
+  .stat-number {
+    color: var(--color-white);
+  }
+
+  .stat-detail-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    opacity: 0.8;
+  }
+
+  .chart-card {
+    background: #1e1e1e;
+    border-color: var(--color-white);
+  }
+
+  .chart-title {
+    color: var(--color-white);
+  }
+
+  .current-date {
+    color: var(--color-black) !important;
+    opacity: 1;
+  }
+
+  /* Estilos para Recharts en modo oscuro */
+  .chart-card .recharts-text {
+    fill: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-cartesian-axis-tick-value {
+    fill: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-legend-item-text {
+    fill: var(--color-white) !important;
+    color: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-tooltip-wrapper {
+    border-radius: 8px;
+  }
+
+  .chart-card .recharts-default-tooltip {
+    background-color: #2a2a2a !important;
+    border: 2px solid var(--color-white) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .chart-card .recharts-tooltip-label {
+    color: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-tooltip-item {
+    color: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-tooltip-item-name,
+  .chart-card .recharts-tooltip-item-value,
+  .chart-card .recharts-tooltip-item-separator {
+    color: var(--color-white) !important;
+  }
+
+  .chart-card .recharts-cartesian-grid-horizontal line,
+  .chart-card .recharts-cartesian-grid-vertical line {
+    stroke: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .chart-card .recharts-pie-label-text {
+    fill: var(--color-white) !important;
+  }
+}
+
+/* ── Panel de bienvenida (usuarios no-admin) ── */
+.welcome-dashboard {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid var(--color-green);
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-green), #a8ff78, var(--color-green));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.welcome-gym-logo {
+  font-size: 56px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(9,164,81,0.5));
+}
+
+.welcome-card h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.welcome-card .welcome-subtitle {
+  font-size: 16px;
+  color: var(--color-green);
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+/* ── Tarjeta de mensaje del día ── */
+.daily-message-card {
+  background: var(--color-white);
+  border: 2px solid var(--color-black);
+  border-radius: 20px;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+
+.daily-message-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-green), #78d96a);
+}
+
+.daily-message-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-green);
+  background: rgba(9,164,81,0.1);
+  border: 1px solid var(--color-green);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 20px;
+}
+
+.daily-message-quote-icon {
+  font-size: 42px;
+  color: var(--color-green);
+  opacity: 0.25;
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  font-family: Georgia, serif;
+  line-height: 1;
+  user-select: none;
+}
+
+.daily-message-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0;
+}
+
+.daily-message-day {
+  font-size: 12px;
+  color: var(--color-gray-dark);
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+/* Versión compacta para el dashboard de admin */
+.daily-message-card.compact {
+  padding: 24px 30px;
+  margin-top: 30px;
+}
+
+.daily-message-card.compact .daily-message-text {
+  font-size: 17px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-icon {
+    font-size: 40px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-number.stat-large {
+    font-size: 48px;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .charts-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .stat-icon {
+    font-size: 36px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-number.stat-large {
+    font-size: 40px;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
+}
